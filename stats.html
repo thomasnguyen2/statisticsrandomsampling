@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	
+
+		<title> Sampling Activity  </title>
+
+		
+
+ 
+	</head>
+
+	<style>
+		
+		* {
+ 			 box-sizing: border-box;
+		}
+		.column{
+			float: left;
+			width: 50%;
+			padding: 10px;
+			
+			
+		
+		}
+		.row:after{
+			content:"";
+			display: table;
+			clear:both;
+			
+		
+		}
+		form, h1{
+			border: solid;
+		}
+
+		
+	</style>
+
+
+
+
+
+
+	<script>
+		      function eval()
+            {
+
+            	var green = document.getElementById('green').value;
+                var yellow = document.getElementById('yellow').value;
+                var pink = document.getElementById('pink').value;
+                var blue = document.getElementById('blue').value;
+                var orange = document.getElementById('orange').value;
+
+                var z = green + yellow + pink + blue + orange;
+                var z = Number(green) + Number(yellow) + Number(pink) + Number(blue) + Number(orange);
+ 
+     		 	var yes = document.getElementById('yes').value;
+     		 	var no = 100 - Number(yes);
+
+
+
+               if(z == 100 && yes < 99)
+               {
+
+                    alert("Correct Input for color and yes");
+                   	printimage();
+                    return false;
+
+
+
+        
+
+               }
+               else
+               {
+                    alert("Invalid Input: Make sure data adds up to 100 and yes is less than 99, try again");
+                    return false;
+
+               }
+
+
+
+
+
+           }
+
+
+           function printimage()
+		{
+
+
+	
+			var textblue = " ";
+			//var textblueno = " ";
+			var img11 = document.createElement("imgblueyes");
+			var img12 = document.createElement("imgblueno");
+			img11.src = "blueyes.jpg";
+			img12.src = "blueno.jpg";
+			var src11 = document.getElementById("print");
+			var src12 = document.getElementById("print");
+
+
+			var textgreen = " ";
+			var img21 = document.createElement("imggreenyes");
+			var img22 = document.createElement("imggreenno");
+			img21.src = "greenyes.jpg";
+			img22.src = "greenno.jpg";
+			var src21 = document.getElementById("print");
+			var src22 = document.getElementById("print");
+
+
+
+
+			var bluecounter = document.getElementById('blue').value; 
+			var greencounter = document.getElementById('green').value;
+
+			for(x = 1; x<=100; x++)
+			{
+				numforpeople = Math.floor(Math.random() * 2) + 1;
+				numforyesno = Math.floor(Math.random() * 2) + 1;
+				
+				if(numforpeople == 1)
+				{
+					if(numforyesno == 1)
+					{
+						textblue += x +"<img id='img11' src='blueyes.jpg' width='50' height='50' alt='blue person yes'>" + " ";
+						document.getElementById("print").innerHTML = textblue;
+					
+					}
+					else if(numforyesno == 2)
+					{
+						textblue += x +"<img id='img12' src='blueno.jpg' width='50' height='50' alt='blue person no'>" + " ";
+						document.getElementById("print").innerHTML = textblue;
+					}
+				
+				}
+				else if(numforpeople == 2)
+				{
+					if(numforyesno == 1)
+					{
+						textgreen += x +"<img id='img21' src='greenyes.jpg' width='50' height='50' alt='green person yes'>" + " ";
+						document.getElementById("print").innerHTML = textgreen;
+					}
+					else if(numforyesno == 2)
+					{
+						textgreen += x +"<img id='img22' src='greenno.jpg' width='50' height='50' alt='green person no'>" + " ";
+						document.getElementById("print").innerHTML = textgreen;
+					}
+				
+				}
+
+
+
+			
+				
+			}
+
+		
+			//document.getElementById("print").innerHTML = textblue;
+			//document.getElementById("print").innerHTML = textgreen;
+		
+			/*
+			var i;
+			var text = " ";
+			var img = document.createElement("img");
+			img.src = "blue.jpg";
+			var src = document.getElementById("pblue");
+			var blue = document.getElementById('blue').value;
+			//alert(blue);
+
+		
+			for (i = 1; i <= blue ; i++) 
+			{	
+  			text += i +"<img id='img' src='blue.jpg' width='50' height='50' alt='blue person'>" + " ";
+			}
+	
+			document.getElementById("pblue").innerHTML = text;
+
+
+
+
+			var k;
+			var text2 = " ";
+			var img1 = document.createElement("img2");
+			img.src = "green.jpg";
+			var src = document.getElementById("pgreen");
+			var green = document.getElementById('green').value;
+			var num = Number(blue) + Number(green);
+
+			var x = 1;
+			var result = Number(blue) + x;
+		
+			//alert(num);
+			//alert(green);
+
+			for(k = result; k <= num; k++)
+			{
+				text2 += k+"<img id='img2' src='green.jpg' width='50' height='50' alt='green person'>" + " ";
+			}
+			
+			document.getElementById("pgreen").innerHTML = text2;
+
+
+
+
+
+			var j;
+			var text3 = " ";
+			var img2 = document.createElement("img3");
+			img.src = "yellow.jpg";
+			var src = document.getElementById("pyellow");
+			var yellow = document.getElementById('yellow').value;
+			//alert(yellow);
+
+			var start = Number(num) + x;
+			var together = Number(blue) + Number(green) + Number(yellow);
+
+			for(j= start; j<=together; j++)
+			{
+				text3 += j+"<img id='img3' src='yellow.jpg' width='50' height='50' alt='yellow person'>" + " ";
+			}
+
+			document.getElementById("pyellow").innerHTML = text3;
+
+
+
+
+
+			var e;
+			var text4 = " ";
+			var img3 = document.createElement("img4");
+			img.src = "pink.jpg";
+			var src = document.getElementById("ppink");
+			var pink = document.getElementById('pink').value;
+			//alert(pink);
+
+
+			var start4 = Number(together) + x;
+			var sum = Number(blue) + Number(green) + Number(yellow) + Number(pink);
+			for(e=start4; e<=sum; e++)
+			{
+				text4 += e+"<img id='img4' src='pink.jpg' width='50' height='50' alt='pink person'>" + " ";
+			}
+
+			document.getElementById("ppink").innerHTML = text4;
+
+
+
+
+			var w;
+			var text5 = " ";
+			var img4 = document.createElement("img5");
+			img.src = "orange.jpg";
+			var src = document.getElementById("porange");
+			var orange =  document.getElementById('orange').value;
+			//alert(orange);
+
+			var start5 = Number(sum) + x;
+			var last = Number(blue) + Number(green) + Number(yellow) + Number(pink) + Number(orange);
+			for(w=start5; w<=last; w++)
+			{
+				text5 += w+"<img id='img5' src='orange.jpg' width='50' height='50' alt='orange person'>" + " ";
+			}
+
+			document.getElementById("porange").innerHTML = text5;
+
+
+			*/
+			
+
+
+		}
+
+
+
+
+
+
+          
+
+
+
+	</script>
+
+
+
+	
+
+
+	<body>
+
+		<div class="row">
+
+			<div class="column" style="background-color: gray;">
+			<h1> Enter in the number for each color</h1>
+		
+
+
+			<form name ="myForm" action="new.html">
+
+			<img id="img" src="blue.jpg" width="40" alt="blue person"> 
+            Blue: <input type="number" id="blue" /><br> <br>
+
+            <img id="img2" src="green.jpg" width="40" alt="green person">
+            Green: <input type="number" id="green"/><br> <br>
+
+            <img id="img3" src="yellow.jpg" width="40" alt="yellow person">
+            Yellow: <input type="number" id="yellow"/><br> <br>
+
+            <img id="img4" src="pink.jpg" width="40" alt="pink person">
+            Pink: <input type="number" id="pink"/><br> <br>
+   
+            <img id="img5" src="orange.jpg" width="40" alt="orange person">
+            Orange: <input type="number" id="orange"/><br> <br>
+
+            <br></br>
+
+			</form>
+            <h1> Enter in how many yes's? (Out of 100)</h1>
+			<form>
+            Yes? <input type="number" id="yes" />
+		</form>
+
+            <br></br>
+
+
+            <input type ="button" value="Submit"  onclick= "eval();"/>
+			<button onclick="print();"> Print</button>
+			
+			</div>
+
+
+
+
+
+		<div class="column" style="background-color: gainsboro;">
+
+			<h1> About The Website </h1>
+			
+			This website is used for statstical problems 
+			used in AP Statstics <br>
+
+
+			<img id="img11" src="blueyes.jpg" width="40" alt="blue person yes"> <img id="img12" src="blueno.jpg" width="40" alt="blue person no"> 
+
+		</div>
+		
+
+       
+    	
+		</div>
+
+
+
+
+
+
+
+		<p id="print"></p>
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
+
